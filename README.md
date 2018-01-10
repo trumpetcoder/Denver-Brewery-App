@@ -14,3 +14,9 @@ The app will be able to update the Users list of visited breweries from the data
 
 The app will be deployed to the Heroku hosting site.
 
+Glow 1: Very realistic setup
+Glow 2: Obtainable in timeframe given
+
+Grow: Add in the wireframes to README using Mockflow or other service
+Grow: Build out Trello Board user stories and add ratings
+
