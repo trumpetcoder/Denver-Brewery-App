@@ -14,6 +14,8 @@ The app will be able to update the Users list of visited breweries from the data
 
 The app will be deployed to the Heroku hosting site.
 
+Link to TRELLO board https://trello.com/b/hhZhAehF/denver-brewery-app
+
 Glow 1: Very realistic setup
 Glow 2: Obtainable in timeframe given
 
