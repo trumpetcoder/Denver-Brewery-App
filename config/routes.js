@@ -9,18 +9,18 @@ var usersController = require('../controllers/users');
 var staticsController = require('../controllers/statics');
 
 function authenticatedUser (req, res, next) {
-  // IF THE USER ID AUTHENTICATED, THEN WE CONTINUE THE EXECUTION
-  if (req.isAuthenticated()) return next();
+	// IF THE USER ID AUTHENTICATED, THEN WE CONTINUE THE EXECUTION
+	if (req.isAuthenticated()) return next();
 
-  // OTHERWISE THE REQUEST IS ALWAYS REDIRECTED TO THE HOMEPAGE
-  res.redirect('/');
+	// OTHERWISE THE REQUEST IS ALWAYS REDIRECTED TO THE HOMEPAGE
+	res.redirect('/');
 }
 
 router.route('/')
   .get(staticsController.home);
 
 router.route('/signup')
-  .get(usersController.getSignup)
+  // .get(usersController.getSignup)
   .post(usersController.postSignup);
 
 router.route('/login')
@@ -31,6 +31,6 @@ router.route("/logout")
   .get(usersController.getLogout);
 
 router.route('/secret')
-  .get(authenticatedUser, usersController.secret);
+	.get(authenticatedUser, usersController.secret);
 
 module.exports = router;

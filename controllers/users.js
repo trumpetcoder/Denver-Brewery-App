@@ -14,52 +14,36 @@ function postSignup(request, response, next) {
 
 // GET /login
 function getLogin(request, response, next) {
-  response.render('login.ejs', { message: request.flash('loginMessage') }); 
+	response.render('login.ejs', { message: request.flash('loginMessage') }); 
 }
 
 // POST /login 
 function postLogin(request, response, next) {
-  var loginStrategy = passport.authenticate('local-login', {
-    successRedirect : '/',
-    failureRedirect : '/login',
-    failureFlash : true
-  });
+	var loginStrategy = passport.authenticate('local-login', {
+		successRedirect : '/',
+		failureRedirect : '/login',
+		failureFlash : true
+	});
 
-  return loginStrategy(request, response, next);
+	return loginStrategy(request, response, next);
 }
 
 // GET /logout
 function getLogout(request, response) {
-  request.logout();
-  response.redirect('/');
+	request.logout();
+	response.redirect('/');
 }
 
 // Restricted page
 function secret(request, response){
-  response.render('secret.ejs');
+	response.render('secret.ejs');
 }
 
 module.exports = {
   getLogin: getLogin,
   postLogin: postLogin,
-  getSignup: getSignup,
+  // getSignup: getSignup,
   postSignup: postSignup,
   getLogout: getLogout,
   secret: secret
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// end
